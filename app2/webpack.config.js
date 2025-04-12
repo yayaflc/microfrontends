@@ -25,12 +25,16 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'app2',
+      filename: 'remoteEntry.js',
       remotes: {
         app1: 'app1@http://localhost:3001/remoteEntry.js',
       },
+      exposes: {
+        "./useTextData": "./src/hooks/useTextData",
+      },
       shared: {
-        react: { singleton: true, requiredVersion: '19.1.0' },
-        'react-dom': { singleton: true, requiredVersion: '19.1.0' },
+        react: { singleton: true, requiredVersion: false },
+        'react-dom': { singleton: true, requiredVersion: false },
       },
     }),
     new HtmlWebpackPlugin({

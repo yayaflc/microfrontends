@@ -1,24 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import TextData from "./components/TextData";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 flex flex-col items-center justify-center px-4">
+      <h1 className="text-4xl font-bold text-purple-900 mb-8">App 1 ✨</h1>
+      <TextData />
     </div>
   );
-}
+};
 
 export default App;
